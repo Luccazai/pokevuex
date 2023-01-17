@@ -4,6 +4,13 @@ module.exports = {
   theme: {
     extend: {
       display: ['group-hover'],
+      screens: {
+        'tall': { 'raw': '(max-height: 600px)'},
+      },
+      colors: {
+        'mainBlue': '#3EB07E',
+        'secondaryBlue': '#41628b',
+      },
     },
   },
   plugins: [],

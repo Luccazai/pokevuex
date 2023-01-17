@@ -98,13 +98,13 @@ export default {
 <style scoped>
   .statsModal {
     @apply fixed z-50 overflow-y-auto inset-0 w-full h-full p-3
-    backdrop-blur-lg bg-black/80 overflow-hidden
+    backdrop-blur-lg bg-neutral-800/80 overflow-hidden
     mb-10 md:mb-0
     flex items-center;
   }
 
   .modalContent {
-    @apply w-4/5 h-full xl:h-4/5 md:border-white md:border-2 md:p-4 mx-auto;
+    @apply w-4/5 h-full xl:h-4/5 md:border-white md:border-2 md:p-4 mx-auto tall:h-full;
   }
 
   .modalBodyImgContainer {

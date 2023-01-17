@@ -23,7 +23,6 @@ export default {
  }
 
  .fa-github {
-  @apply hover:text-white transition duration-300 text-3xl md:text-4xl;
-  color: #41628b;
+  @apply hover:text-white transition duration-300 text-3xl md:text-4xl text-secondaryBlue;
  }
 </style>

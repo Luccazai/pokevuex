@@ -42,7 +42,6 @@ export default {
     };
   },
   beforeMount() {
-    /* eslint no-unused-expressions: "off" */
     this.getTypeRelations(this.pokemon.types[0].type.url)
       .then((response) => {
         this.typeWeakAgainst.push(response.data.damage_relations.double_damage_from);
