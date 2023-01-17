@@ -98,4 +98,8 @@ export default {
   .dragon {
     background-image: url(../assets/type-icons/Icon_Dragon.webp);
   }
+
+  .none {
+    background-image: url(../assets/type-icons/none.png);
+  }
 </style>

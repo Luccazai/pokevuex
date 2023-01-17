@@ -2,11 +2,6 @@ import api from './baseAPI';
 
 export default {
 
-  getPokemonByName(pokemonName) {
-    const result = api().get(`pokemon/${pokemonName}`);
-    return result;
-  },
-
   getPokemonByID(pokemonID) {
     const result = api().get(`pokemon/${pokemonID}/`);
     return result;

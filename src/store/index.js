@@ -20,8 +20,8 @@ export default createStore({
     getPokemons: async (state) => {
       const totalOfPokemons = await pokemonApi.getTotalOfPokemons()
         .then((response) => response.data.count)
-        .catch((err) => {
-          console.log(err);
+        .catch((/* err */) => {
+          // console.log(err);
         });
 
       /* eslint-disable no-await-in-loop */
@@ -30,7 +30,7 @@ export default createStore({
           const response = await pokemonApi.getPokemonByID(index);
           state.pokemons.push(response.data);
         } catch (err) {
-          console.log(err);
+          // console.log(err);
         }
       }
     },
@@ -50,7 +50,6 @@ export default createStore({
         const response = await pokemonApi.getTypeRelations(type);
         return response;
       } catch (err) {
-        console.log(err);
         return (err);
       }
     },

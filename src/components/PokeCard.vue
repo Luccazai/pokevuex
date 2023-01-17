@@ -36,7 +36,7 @@ export default {
     return {
       pokeName: this.pokemon.name,
       pokeID: this.pokemon.id,
-      pokeImage: this.pokemon.sprites.front_default,
+      pokeImage: String,
       pokeTypes: this.pokemon.types,
     };
   },
@@ -44,6 +44,15 @@ export default {
     ...mapMutations([
       'statsModalToggle',
     ]),
+  },
+  beforeMount() {
+    const defaultSprite = this.pokemon.sprites.front_default;
+
+    if (defaultSprite === null) {
+      this.pokeImage = 'https://s-media-cache-ak0.pinimg.com/originals/95/d5/cd/95d5cded00f3a3e8a98fb1eed568aa9f.png';
+    } else {
+      this.pokeImage = defaultSprite;
+    }
   },
 };
 </script>

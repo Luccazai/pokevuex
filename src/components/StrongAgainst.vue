@@ -44,10 +44,18 @@ export default {
   beforeMount() {
     /* eslint no-unused-expressions: "off" */
     this.pokemon.types.forEach((pokeType) => {
-      this.getTypeRelations(pokeType.type.url)
-        .then((response) => {
-          this.typeStrongAgainst.push(response.data.damage_relations.double_damage_to);
+      if (pokeType.type.name === 'normal' && this.pokemon.types.length === 1) {
+        this.typeStrongAgainst.push({
+          0: {
+            name: 'none',
+          },
         });
+      } else {
+        this.getTypeRelations(pokeType.type.url)
+          .then((response) => {
+            this.typeStrongAgainst.push(response.data.damage_relations.double_damage_to);
+          });
+      }
     });
   },
 };

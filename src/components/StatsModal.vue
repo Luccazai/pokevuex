@@ -28,7 +28,7 @@
             <div class="flex justify-center">
               <img
               v-bind:src="shinySprite"
-              v-bind:alt="Shiny"
+              v-bind:alt="`Shiny ${pokemon.name}`"
               class="md:hidden w-full"
               />
             </div>
@@ -76,9 +76,9 @@ export default {
 
     showSprite() {
       if (this.showShiny) {
-        return this.pokemon.sprites.front_shiny;
+        return this.shinySprite;
       }
-      return this.pokemon.sprites.front_default;
+      return this.defaultSprite;
     },
   },
   data() {
@@ -89,8 +89,20 @@ export default {
     };
   },
   beforeMount() {
-    this.shinySprite = this.pokemon.sprites.front_shiny;
-    this.defaultSprite = this.pokemon.sprites.front_default;
+    const shinyImg = this.pokemon.sprites.front_shiny;
+    const defaultImg = this.pokemon.sprites.front_default;
+
+    if (shinyImg === null) {
+      this.shinySprite = 'https://s-media-cache-ak0.pinimg.com/originals/95/d5/cd/95d5cded00f3a3e8a98fb1eed568aa9f.png';
+    } else {
+      this.shinySprite = shinyImg;
+    }
+
+    if (defaultImg === null) {
+      this.defaultSprite = 'https://s-media-cache-ak0.pinimg.com/originals/95/d5/cd/95d5cded00f3a3e8a98fb1eed568aa9f.png';
+    } else {
+      this.defaultSprite = defaultImg;
+    }
   },
 };
 </script>
