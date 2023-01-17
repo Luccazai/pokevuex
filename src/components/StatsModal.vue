@@ -25,6 +25,13 @@
         </div>
         <div class="modalBodyInfos">
           <div class="modalBodyInfosBattleStats">
+            <div class="flex justify-center">
+              <img
+              v-bind:src="shinySprite"
+              v-bind:alt="Shiny"
+              class="md:hidden w-full"
+              />
+            </div>
             <p><i class="fa-solid fa-heart"></i> HP: {{ pokemon.stats[0].base_stat }}</p>
             <p><i class="fa-solid fa-burst"></i> Attack: {{ pokemon.stats[1].base_stat }}</p>
             <p><i class="fa-solid fa-shield"></i> Defense: {{ pokemon.stats[2].base_stat }}</p>
@@ -91,12 +98,17 @@ export default {
 <style scoped>
   .statsModal {
     @apply fixed z-50 overflow-y-auto inset-0 w-full h-full p-3
-    backdrop-blur-lg bg-black/60 overflow-hidden
+    backdrop-blur-lg bg-black/80 overflow-hidden
+    mb-10 md:mb-0
     flex items-center;
   }
 
   .modalContent {
-    @apply w-4/5 h-4/5 border-white border-2 p-4 mx-auto;
+    @apply w-4/5 h-full xl:h-4/5 md:border-white md:border-2 md:p-4 mx-auto;
+  }
+
+  .modalBodyImgContainer {
+    @apply hidden md:block;
   }
 
   .modalHeader {
@@ -112,7 +124,7 @@ export default {
   }
 
   .modalBody {
-    @apply grid grid-cols-2 p-2 h-full;
+    @apply grid grid-cols-1 md:grid-cols-2 p-2 h-full;
   }
 
   .modalBodyImage {
@@ -155,7 +167,7 @@ export default {
   }
 
   .fa-shield-halved {
-    @apply text-neutral-800;
+    @apply text-neutral-200;
   }
 
   .fa-bolt {

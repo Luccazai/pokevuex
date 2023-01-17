@@ -16,6 +16,7 @@ module.exports = {
     "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
     'vuejs-accessibility/click-events-have-key-events': 'off',
     'no-restricted-syntax': 0,
+    "vuejs-accessibility/anchor-has-content": 'off',
   },
   overrides: [
     {
